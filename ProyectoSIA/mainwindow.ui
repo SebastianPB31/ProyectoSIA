@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1016</width>
-    <height>627</height>
+    <width>1281</width>
+    <height>706</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -206,7 +206,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>9</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_0">
        <layout class="QGridLayout" name="gridLayout_11">
@@ -223,7 +223,7 @@
         <item row="0" column="3">
          <widget class="QLineEdit" name="server_name">
           <property name="text">
-           <string>192.168.42.79</string>
+           <string>192.168.56.101</string>
           </property>
          </widget>
         </item>
@@ -265,7 +265,7 @@
         <item row="0" column="1">
          <widget class="QLineEdit" name="driver">
           <property name="text">
-           <string>/bin/SQLSD</string>
+           <string>{ODBC Driver 17 for SQL Server}</string>
           </property>
          </widget>
         </item>
@@ -308,6 +308,9 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>150</number>
+          </attribute>
          </widget>
         </item>
        </layout>
@@ -328,6 +331,9 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>150</number>
+          </attribute>
          </widget>
         </item>
        </layout>

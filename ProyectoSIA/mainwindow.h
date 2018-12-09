@@ -56,6 +56,7 @@ private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
     QSqlQueryModel* model;
+    QString encabezado;
     QVector<std::tuple<int,int,int,QString>> ListaCompra;
 };
 

@@ -6,36 +6,69 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    model = new QSqlQueryModel;
+    model = nullptr;
+    encabezado= QString("PRODUCTO");
+    encabezado += QString(" ").repeated(30 - encabezado.size()) + QString("PRECIO");
+    encabezado += QString(" ").repeated(40 - encabezado.size()) + QString("CANTIDAD");
+
 }
 
 MainWindow::~MainWindow()
 {
-    model->destroyed();
+    if (model) model->destroyed();
     db.close();
     delete ui;
 }
 
+void MainWindow::on_conectar_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    db.close();
+    db.removeDatabase("QODBC3");
+    if (model != nullptr){
+        model->destroyed();
+    }
+    QString driver = ui->driver->text(),
+            server = ui->server_name->text(),
+            dataBase = ui->DDBB->text(),
+            userID = ui->userID->text(),
+            password = ui->password->text(),
+            texto = "DRIVER=%0;SERVER=%1;DATABASE=%2;UID=%3;PWD=%4";
+
+    db = QSqlDatabase::addDatabase("QODBC3");
+    db.setDatabaseName(texto.arg(driver).arg(server).arg(dataBase).arg(userID).arg(password));
+    model = new QSqlQueryModel;
+    bool ok = db.open();
+
+    if (ok) ui->log->setText(QString("OK"));
+    else ui->log->setText(QString(db.lastError().text()));
+
+}
+
 void MainWindow::on_infoEmpleado_clicked()
 {
+    if (model == nullptr) return;
     ui->stackedWidget->setCurrentIndex(1);
     ui->label->setText("INFORMACION DE EMPLEADOS");
     // SQL query
     // imprimir a pantalla
+
     model->setQuery("SELECT * FROM EMPLEADO", db);
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("RUT"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nombre"));
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Apellido"));
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("Sueldo"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Apellido"));
     model->setHeaderData(4, Qt::Horizontal, QObject::tr("Telefono"));
     model->setHeaderData(5, Qt::Horizontal, QObject::tr("Direccion"));
     ui->tablaEmpleado->setModel(model);
     ui->tablaEmpleado->show();
+
 }
 
 
 void MainWindow::on_listaProducto_clicked()
 {
+    if (model == nullptr) return;
     ui->stackedWidget->setCurrentIndex(2);
     ui->label->setText("LISTA DE PRODUCTOS");
     // SQL query
@@ -53,6 +86,7 @@ void MainWindow::on_listaProducto_clicked()
 
 void MainWindow::on_agregarEmpleado_clicked()
 {
+    if (model == nullptr) return;
     ui->stackedWidget->setCurrentIndex(3);
     ui->label->setText("AGREGAR EMPLEADO");
     // entrada -> SQL query
@@ -61,6 +95,7 @@ void MainWindow::on_agregarEmpleado_clicked()
 
 void MainWindow::on_editarEmpleado_clicked()
 {
+    if (model == nullptr) return;
     ui->stackedWidget->setCurrentIndex(4);
     ui->label->setText("EDITAR EMPLEADO");
     // entrada -> SQL query
@@ -68,6 +103,7 @@ void MainWindow::on_editarEmpleado_clicked()
 
 void MainWindow::on_agregarProveedor_clicked()
 {
+    if (model == nullptr) return;
     ui->stackedWidget->setCurrentIndex(5);
     ui->label->setText("AGREGAR PROVEEDOR");
     // entrada -> SQL query
@@ -75,6 +111,7 @@ void MainWindow::on_agregarProveedor_clicked()
 
 void MainWindow::on_editarProveedor_clicked()
 {
+    if (model == nullptr) return;
     ui->stackedWidget->setCurrentIndex(6);
     ui->label->setText("EDITAR PROVEEDOR");
     // entrada -> SQL query
@@ -82,6 +119,7 @@ void MainWindow::on_editarProveedor_clicked()
 
 void MainWindow::on_agregarProducto_clicked()
 {
+    if (model == nullptr) return;
     ui->stackedWidget->setCurrentIndex(7);
     ui->label->setText("AGREGAR PRODUCTO");
     // entrada -> SQL query
@@ -89,6 +127,7 @@ void MainWindow::on_agregarProducto_clicked()
 
 void MainWindow::on_editarProducto_clicked()
 {
+    if (model == nullptr) return;
     ui->stackedWidget->setCurrentIndex(8);
     ui->label->setText("EDITAR PRODUCTO");
     // entrada -> SQL query
@@ -96,13 +135,19 @@ void MainWindow::on_editarProducto_clicked()
 
 void MainWindow::on_realizarVenta_clicked()
 {
+    if (model == nullptr) return;
     ui->stackedWidget->setCurrentIndex(9);
     ui->label->setText("REALIZAR VENTA");
     // entrada -> SQL query
+    ui->detalleBoleta->clear();
+    ListaCompra.clear();
+    ui->totalBoleta->display(0);
+    ui->detalleBoleta->append(encabezado);
 }
 
 void MainWindow::on_realizarCompra_clicked()
 {
+    if (model == nullptr) return;
     ui->stackedWidget->setCurrentIndex(10);
     ui->label->setText("REALIZAR COMPRA");
     // entrada -> SQL query
@@ -127,14 +172,15 @@ void MainWindow::on_codigoPistola_returnPressed()
 
     if (verif == codigo){
         // producto existe
-        QString nombre = model->query().value(2).toString();
-        int precio=model->query().value(3).toInt();
+        QString nombre = model->data(model->index(0, 2)).toString();
+        int precio= model->data(model->index(0, 3)).toInt();
         ui->label_28->setText(nombre);
-        QString espacio = QString(" ").repeated(80 - nombre.size() - cantidad.size());
-        QString linea = nombre + espacio + cantidad;
+        QString linea = nombre + QString(" ").repeated(30 - nombre.size()) + QString::number(precio);
+        linea = linea + QString(" ").repeated(encabezado.size() - linea.size() - cantidad.size()) + cantidad;
         ui->detalleBoleta->append(linea);
+
         ListaCompra.append(std::tuple<int,int,int,QString>(codigo.toInt(),cantidadI, precio,linea));
-        std::get<0>(ListaCompra[0]);
+
         ui->totalBoleta->display(ui->totalBoleta->intValue() + precio*cantidadI);
         ui->cantidad->setText(QString("1"));
         ui->codigoPistola->clear();
@@ -175,6 +221,7 @@ void MainWindow::on_codigoBorrar_returnPressed()
     if (ui->codigoBorrar->text() == "") return;
     int codigo = ui->codigoBorrar->text().toInt();
     ui->detalleBoleta->clear();
+    ui->detalleBoleta->append(encabezado);
     // volver a calular precio
     int precioTotal = 0;
     QVector<std::tuple<int,int,int,QString>> nuevaListaCompra;
@@ -190,24 +237,5 @@ void MainWindow::on_codigoBorrar_returnPressed()
     ListaCompra=nuevaListaCompra;
 }
 
-void MainWindow::on_conectar_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(0);
 
-    QString driver = ui->driver->text(),
-            server = ui->server_name->text(),
-            dataBase = ui->DDBB->text(),
-            userID = ui->userID->text(),
-            password = ui->password->text(),
-            texto = "DRIVER=%0;SERVER=%1;DATABASE=%2;UID=%3;PWD=%4";
-
-    db = QSqlDatabase::addDatabase("QODBC3");
-    db.setDatabaseName(texto.arg(driver).arg(server).arg(dataBase).arg(userID).arg(password));
-
-    bool ok = db.open();
-
-    if (ok) ui->log->setText(QString("OK"));
-    else ui->log->setText(QString(db.lastError().text()));
-
-}
 
