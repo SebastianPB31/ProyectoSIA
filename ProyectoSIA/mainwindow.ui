@@ -10,6 +10,12 @@
     <height>706</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -21,17 +27,7 @@
     </sizepolicy>
    </property>
    <layout class="QGridLayout" name="gridLayout_4">
-    <item row="0" column="0">
-     <widget class="QPushButton" name="conectar">
-      <property name="focusPolicy">
-       <enum>Qt::NoFocus</enum>
-      </property>
-      <property name="text">
-       <string>Conectar</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
+    <item row="0" column="1" colspan="2">
      <widget class="QLabel" name="label">
       <property name="font">
        <font>
@@ -39,9 +35,6 @@
         <weight>75</weight>
         <bold>true</bold>
        </font>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="text">
        <string/>
@@ -207,6 +200,16 @@
       </item>
      </layout>
     </item>
+    <item row="0" column="0">
+     <widget class="QPushButton" name="conectar">
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="text">
+       <string>Conectar</string>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="1">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="sizePolicy">
@@ -216,7 +219,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>9</number>
+       <number>10</number>
       </property>
       <widget class="QWidget" name="page_0">
        <layout class="QGridLayout" name="gridLayout_11">
@@ -443,36 +446,96 @@
        </layout>
       </widget>
       <widget class="QWidget" name="page_5">
-       <layout class="QGridLayout" name="gridLayout_6">
-        <item row="2" column="1">
-         <widget class="QLineEdit" name="lineEdit_10"/>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_12">
-          <property name="text">
-           <string>RUT</string>
+       <layout class="QGridLayout" name="gridLayout_13">
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
-         </widget>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_8"/>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_10">
+         <widget class="QPushButton" name="agregarNuevoProveedor">
           <property name="text">
-           <string>Nombre</string>
+           <string>Agregar Proveedor</string>
+          </property>
+          <property name="autoDefault">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_11">
-          <property name="text">
-           <string>Telefono</string>
+        <item row="1" column="2">
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
-         </widget>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_7"/>
+        <item row="0" column="0" colspan="3">
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>RUT</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="rutProv"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Nombre</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="nombreProv"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_40">
+            <property name="text">
+             <string>Apellidos</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="apellidoProv"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>Telefono</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="fonoProv"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_41">
+            <property name="text">
+             <string>Empresa</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="nombreEmpProv"/>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -587,6 +650,9 @@
          <widget class="QPushButton" name="agregarNuevoProducto">
           <property name="text">
            <string>Agregar Producto</string>
+          </property>
+          <property name="autoDefault">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -718,6 +784,9 @@
           <property name="focusPolicy">
            <enum>Qt::ClickFocus</enum>
           </property>
+          <property name="editable">
+           <bool>false</bool>
+          </property>
          </widget>
         </item>
         <item row="1" column="1" colspan="2">
@@ -787,7 +856,208 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_10"/>
+      <widget class="QWidget" name="page_10">
+       <layout class="QGridLayout" name="gridLayout_15">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="gridLayout_14">
+          <item row="4" column="2">
+           <widget class="QLabel" name="label_51">
+            <property name="text">
+             <string>RUT Proveedor</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="4">
+           <widget class="QLabel" name="label_53">
+            <property name="text">
+             <string>Fecha pago</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLineEdit" name="precioCaja"/>
+          </item>
+          <item row="0" column="4">
+           <widget class="QLabel" name="label_47">
+            <property name="text">
+             <string>Borrar producto</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QDateEdit" name="fechaVenc">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_42">
+            <property name="text">
+             <string>Nombre</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="3">
+           <widget class="QComboBox" name="listaProveedores">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::ClickFocus</enum>
+            </property>
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="label_52">
+            <property name="text">
+             <string>Fecha de Vencimiento</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="label_48">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_50">
+            <property name="text">
+             <string>Boleta</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1" colspan="6">
+           <widget class="QTextBrowser" name="detalleBoleta_2">
+            <property name="font">
+             <font>
+              <family>Hack</family>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="label_45">
+            <property name="text">
+             <string>Total</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="4">
+           <widget class="QLabel" name="label_43">
+            <property name="text">
+             <string>RUT Vendedor</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="5">
+           <widget class="QComboBox" name="listaEmpleados_2">
+            <property name="focusPolicy">
+             <enum>Qt::ClickFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="6">
+           <widget class="QPushButton" name="emitirBoleta_2">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="text">
+             <string>Realizar Compra</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_46">
+            <property name="text">
+             <string>Cantidad</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="cantidad_2">
+            <property name="text">
+             <string>1</string>
+            </property>
+            <property name="placeholderText">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLineEdit" name="codigoBorrar_2">
+            <property name="focusPolicy">
+             <enum>Qt::ClickFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_44">
+            <property name="text">
+             <string>Codigo</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="codigoPistola_2"/>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_54">
+            <property name="text">
+             <string>Precio caja</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="5">
+           <widget class="QDateEdit" name="fechaPago">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::ClickFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QLCDNumber" name="totalBoleta_2"/>
+          </item>
+          <item row="2" column="5">
+           <widget class="QPushButton" name="agregarCaja">
+            <property name="text">
+             <string>Agregar caja</string>
+            </property>
+            <property name="autoDefault">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -804,20 +1074,19 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>codigoProd</tabstop>
-  <tabstop>nombreProd</tabstop>
-  <tabstop>precioProd</tabstop>
-  <tabstop>tipoProd</tabstop>
-  <tabstop>cantidadMinProd</tabstop>
-  <tabstop>agregarNuevoProducto</tabstop>
-  <tabstop>conectar</tabstop>
+  <tabstop>codigoPistola_2</tabstop>
+  <tabstop>precioCaja</tabstop>
+  <tabstop>cantidad_2</tabstop>
+  <tabstop>fechaVenc</tabstop>
+  <tabstop>agregarCaja</tabstop>
+  <tabstop>agregarNuevoProveedor</tabstop>
   <tabstop>lineEdit_5</tabstop>
   <tabstop>lineEdit</tabstop>
   <tabstop>tablaEmpleado</tabstop>
   <tabstop>lineEdit_6</tabstop>
-  <tabstop>lineEdit_7</tabstop>
-  <tabstop>lineEdit_8</tabstop>
-  <tabstop>lineEdit_10</tabstop>
+  <tabstop>codigoProd</tabstop>
+  <tabstop>nombreProd</tabstop>
+  <tabstop>tipoProd</tabstop>
   <tabstop>lineEdit_11</tabstop>
   <tabstop>lineEdit_9</tabstop>
   <tabstop>lineEdit_12</tabstop>
@@ -839,6 +1108,14 @@
   <tabstop>tablaProducto</tabstop>
   <tabstop>lineEdit_4</tabstop>
   <tabstop>dateEdit_2</tabstop>
+  <tabstop>precioProd</tabstop>
+  <tabstop>cantidadMinProd</tabstop>
+  <tabstop>agregarNuevoProducto</tabstop>
+  <tabstop>rutProv</tabstop>
+  <tabstop>apellidoProv</tabstop>
+  <tabstop>fonoProv</tabstop>
+  <tabstop>nombreProv</tabstop>
+  <tabstop>nombreEmpProv</tabstop>
  </tabstops>
  <resources/>
  <connections>
@@ -955,34 +1232,146 @@
    </hints>
   </connection>
   <connection>
-   <sender>agregarNuevoProducto</sender>
-   <signal>clicked()</signal>
-   <receiver>codigoProd</receiver>
+   <sender>cantidad</sender>
+   <signal>returnPressed()</signal>
+   <receiver>codigoPistola</receiver>
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>805</x>
-     <y>652</y>
+     <x>374</x>
+     <y>150</y>
     </hint>
     <hint type="destinationlabel">
-     <x>957</x>
-     <y>151</y>
+     <x>374</x>
+     <y>92</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>agregarNuevoProducto</sender>
-   <signal>clicked()</signal>
-   <receiver>codigoProd</receiver>
-   <slot>clear()</slot>
+   <sender>nombreProv</sender>
+   <signal>returnPressed()</signal>
+   <receiver>apellidoProv</receiver>
+   <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>806</x>
-     <y>637</y>
+     <x>502</x>
+     <y>245</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1005</x>
-     <y>147</y>
+     <x>498</x>
+     <y>344</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>apellidoProv</sender>
+   <signal>returnPressed()</signal>
+   <receiver>fonoProv</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>615</x>
+     <y>348</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>596</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fonoProv</sender>
+   <signal>returnPressed()</signal>
+   <receiver>nombreEmpProv</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>673</x>
+     <y>448</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>671</x>
+     <y>550</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nombreEmpProv</sender>
+   <signal>returnPressed()</signal>
+   <receiver>agregarNuevoProveedor</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>756</x>
+     <y>549</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>755</x>
+     <y>644</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rutProv</sender>
+   <signal>returnPressed()</signal>
+   <receiver>nombreProv</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>440</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>439</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>precioCaja</sender>
+   <signal>returnPressed()</signal>
+   <receiver>cantidad_2</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>685</x>
+     <y>85</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>444</x>
+     <y>177</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cantidad_2</sender>
+   <signal>returnPressed()</signal>
+   <receiver>fechaVenc</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>477</x>
+     <y>162</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>672</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fechaVenc</sender>
+   <signal>editingFinished()</signal>
+   <receiver>agregarCaja</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>807</x>
+     <y>135</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>971</x>
+     <y>136</y>
     </hint>
    </hints>
   </connection>

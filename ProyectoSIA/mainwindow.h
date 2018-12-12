@@ -40,8 +40,6 @@ class MainWindow : public QMainWindow {
 
   void on_codigoPistola_returnPressed();
 
-  void on_cantidad_returnPressed();
-
   void on_salir_clicked();
 
   void on_emitirBoleta_clicked();
@@ -52,12 +50,23 @@ class MainWindow : public QMainWindow {
 
   void on_agregarNuevoProducto_clicked();
 
- private:
+  void on_agregarNuevoProveedor_clicked();
+
+  void on_codigoPistola_2_returnPressed();
+
+  void on_agregarCaja_clicked();
+
+  void on_emitirBoleta_2_clicked();
+
+private:
   Ui::MainWindow *ui;
   QSqlDatabase db;
   QSqlQueryModel *model;
   QString encabezado;
-  QVector<std::tuple<int, int, int, QString>> ListaCompra;
+  // codigo-precio-cantidad-lineaBoleta
+  QVector<std::tuple<QString, int, int, QString>> listaVenta;
+  // codigo-precio-cantidad-lineaBoleta
+  QVector<std::tuple<QString, int, int, QDate, QString>> listaCompra;
 };
 
 #endif  // MAINWINDOW_H
