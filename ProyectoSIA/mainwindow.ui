@@ -219,7 +219,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>10</number>
+       <number>9</number>
       </property>
       <widget class="QWidget" name="page_0">
        <layout class="QGridLayout" name="gridLayout_11">
@@ -416,78 +416,8 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <layout class="QGridLayout" name="gridLayout_2">
-        <item row="6" column="2">
-         <widget class="QPushButton" name="agregarEmpleado_2">
-          <property name="text">
-           <string>Agregar</string>
-          </property>
-          <property name="autoDefault">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>Nombre</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>RUT</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2">
-         <widget class="QLineEdit" name="rutEmpleado"/>
-        </item>
-        <item row="1" column="2">
-         <widget class="QLineEdit" name="nombreEmpleado"/>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_5">
-          <property name="text">
-           <string>Sueldo</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="2">
-         <widget class="QLineEdit" name="sueldoEmpleado"/>
-        </item>
+       <layout class="QGridLayout" name="gridLayout_16">
         <item row="5" column="2">
-         <widget class="QLineEdit" name="direccionEmpleado"/>
-        </item>
-        <item row="2" column="2">
-         <widget class="QLineEdit" name="apellidosEmpleado"/>
-        </item>
-        <item row="3" column="2">
-         <widget class="QLineEdit" name="fonoEmpleado"/>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_49">
-          <property name="text">
-           <string>Apellidos</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="0">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>Direccion</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_55">
-          <property name="text">
-           <string>Fono</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="2">
          <widget class="QLabel" name="estatus_2">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -500,14 +430,124 @@
           </property>
          </widget>
         </item>
+        <item row="2" column="2">
+         <spacer name="horizontalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="agregarEmpleado_2">
+          <property name="text">
+           <string>Agregar Empleado</string>
+          </property>
+          <property name="autoDefault">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <spacer name="horizontalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0" colspan="3">
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>RUT</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="rutEmpleado"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Nombre</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="nombreEmpleado"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_49">
+            <property name="text">
+             <string>Apellidos</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="apellidosEmpleado"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_55">
+            <property name="text">
+             <string>Fono</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="fonoEmpleado"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Sueldo</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="sueldoEmpleado"/>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Direccion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="direccionEmpleado"/>
+          </item>
+         </layout>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_4">
-       <layout class="QGridLayout" name="gridLayout_5">
-        <item row="6" column="2">
-         <widget class="QLineEdit" name="sueldoEmpleado_2"/>
+       <layout class="QGridLayout" name="gridLayout_17">
+        <item row="1" column="1">
+         <widget class="QPushButton" name="modificarEmpleado">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Modificar Empleado</string>
+          </property>
+         </widget>
         </item>
-        <item row="10" column="2">
+        <item row="2" column="1">
          <widget class="QLabel" name="estatus_3">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -520,99 +560,150 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="2">
-         <widget class="QComboBox" name="listaEmpleados_3">
-          <property name="editable">
-           <bool>true</bool>
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string>RUT</string>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>457</width>
+            <height>20</height>
+           </size>
           </property>
-         </widget>
-        </item>
-        <item row="4" column="2">
-         <widget class="QLineEdit" name="apellidosEmpleado_2"/>
+         </spacer>
         </item>
         <item row="1" column="2">
-         <widget class="QPushButton" name="buscarEmpleado">
-          <property name="text">
-           <string>Buscar</string>
+         <spacer name="horizontalSpacer_9">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
-          <property name="autoDefault">
-           <bool>true</bool>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>457</width>
+            <height>20</height>
+           </size>
           </property>
-         </widget>
+         </spacer>
         </item>
-        <item row="9" column="2">
-         <widget class="QPushButton" name="modificarEmpleado">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>Modificar</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="1">
-         <widget class="QLabel" name="label_8">
-          <property name="text">
-           <string>Direccion</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="1">
-         <widget class="QLabel" name="label_56">
-          <property name="text">
-           <string>Fono</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="2">
-         <widget class="QLineEdit" name="fonoEmpleado_2"/>
-        </item>
-        <item row="3" column="1">
-         <widget class="QLabel" name="label_7">
-          <property name="text">
-           <string>Nombre</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
-         <widget class="QLabel" name="label_57">
-          <property name="text">
-           <string>Apellidos</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="2">
-         <widget class="QLineEdit" name="direccionEmpleado_2"/>
-        </item>
-        <item row="6" column="1">
-         <widget class="QLabel" name="label_9">
-          <property name="text">
-           <string>Sueldo</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="2">
-         <widget class="QLineEdit" name="nombreEmpleado_2"/>
-        </item>
-        <item row="8" column="1">
-         <widget class="QLabel" name="label_58">
-          <property name="text">
-           <string>Estado</string>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="2">
-         <widget class="QComboBox" name="estadoEmpleado"/>
+        <item row="0" column="0" colspan="3">
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="sueldoEmpleado_2"/>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Direccion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="apellidosEmpleado_2"/>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="listaEmpleados_3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_57">
+            <property name="text">
+             <string>Apellidos</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="direccionEmpleado_2"/>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="nombreEmpleado_2"/>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="fonoEmpleado_2"/>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>RUT          </string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QComboBox" name="estadoEmpleado">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="label_58">
+            <property name="text">
+             <string>Estado</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Nombre</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>Sueldo</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_56">
+            <property name="text">
+             <string>Fono</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="buscarEmpleado">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Buscar</string>
+            </property>
+            <property name="autoDefault">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -711,36 +802,96 @@
        </layout>
       </widget>
       <widget class="QWidget" name="page_6">
-       <layout class="QGridLayout" name="gridLayout_7">
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_13">
-          <property name="text">
-           <string>RUT</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_9"/>
-        </item>
+       <layout class="QGridLayout" name="gridLayout_19">
         <item row="1" column="0">
-         <widget class="QLabel" name="label_14">
-          <property name="text">
-           <string>Nombre</string>
+         <spacer name="horizontalSpacer_10">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
-         </widget>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>457</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_12"/>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_15">
+         <widget class="QPushButton" name="agregarNuevoProveedor_2">
           <property name="text">
-           <string>Telefono</string>
+           <string>Modificar Proveedor</string>
+          </property>
+          <property name="autoDefault">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
-         <widget class="QLineEdit" name="lineEdit_11"/>
+        <item row="1" column="2">
+         <spacer name="horizontalSpacer_11">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>457</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="0" colspan="3">
+         <layout class="QGridLayout" name="gridLayout_7">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>RUT</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="rutProv_2"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>Nombre</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="nombreProv_2"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_60">
+            <property name="text">
+             <string>Apellidos</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="apellidoProv_2"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>Telefono</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="fonoProv_2"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_59">
+            <property name="text">
+             <string>Empresa</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="nombreEmpProv_2"/>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -843,46 +994,100 @@
        </layout>
       </widget>
       <widget class="QWidget" name="page_8">
-       <layout class="QGridLayout" name="gridLayout_9">
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_22">
-          <property name="text">
-           <string>Codigo</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_18"/>
-        </item>
+       <layout class="QGridLayout" name="gridLayout_20">
         <item row="1" column="0">
-         <widget class="QLabel" name="label_20">
-          <property name="text">
-           <string>Nombre</string>
+         <spacer name="horizontalSpacer_13">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
-         </widget>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>460</width>
+            <height>17</height>
+           </size>
+          </property>
+         </spacer>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_17"/>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_21">
+         <widget class="QPushButton" name="agregarNuevoProducto_2">
           <property name="text">
-           <string>Fecha Vencimiento</string>
+           <string>Modificar Producto</string>
+          </property>
+          <property name="autoDefault">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
-         <widget class="QDateEdit" name="dateEdit_4"/>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_23">
-          <property name="text">
-           <string>Codigo Caja</string>
+        <item row="1" column="2">
+         <spacer name="horizontalSpacer_12">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
-         </widget>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>459</width>
+            <height>17</height>
+           </size>
+          </property>
+         </spacer>
         </item>
-        <item row="3" column="1">
-         <widget class="QLineEdit" name="lineEdit_16"/>
+        <item row="0" column="0" colspan="3">
+         <layout class="QGridLayout" name="gridLayout_9">
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="nombreProd_2"/>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="cantidadMinProd_2"/>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_20">
+            <property name="text">
+             <string>Codigo</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_21">
+            <property name="text">
+             <string>Cantidad mínima</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="precioProd_2"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_61">
+            <property name="text">
+             <string>Tipo de producto</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_22">
+            <property name="text">
+             <string>Nombre</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="codigoProd_2"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_23">
+            <property name="text">
+             <string>Precio</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QComboBox" name="tipoProd_2">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -1257,18 +1462,11 @@
   <tabstop>asistenciaEmpleadoRut</tabstop>
   <tabstop>rutEmpleadoAsistencia</tabstop>
   <tabstop>fonoEmpleado_2</tabstop>
-  <tabstop>lineEdit_12</tabstop>
-  <tabstop>buscarEmpleado</tabstop>
-  <tabstop>lineEdit_16</tabstop>
-  <tabstop>lineEdit_17</tabstop>
-  <tabstop>lineEdit_18</tabstop>
-  <tabstop>dateEdit_4</tabstop>
   <tabstop>userID</tabstop>
   <tabstop>modificarEmpleado</tabstop>
   <tabstop>sueldoEmpleado_2</tabstop>
   <tabstop>driver</tabstop>
   <tabstop>apellidosEmpleado_2</tabstop>
-  <tabstop>lineEdit_11</tabstop>
   <tabstop>server_name</tabstop>
   <tabstop>rutEmpleado</tabstop>
   <tabstop>nombreEmpleado</tabstop>
@@ -1276,11 +1474,9 @@
   <tabstop>fonoEmpleado</tabstop>
   <tabstop>sueldoEmpleado</tabstop>
   <tabstop>direccionEmpleado</tabstop>
-  <tabstop>agregarEmpleado_2</tabstop>
   <tabstop>DDBB</tabstop>
   <tabstop>listaEmpleados_3</tabstop>
   <tabstop>nombreEmpleado_2</tabstop>
-  <tabstop>lineEdit_9</tabstop>
   <tabstop>direccionEmpleado_2</tabstop>
   <tabstop>estadoEmpleado</tabstop>
   <tabstop>rutProv</tabstop>
