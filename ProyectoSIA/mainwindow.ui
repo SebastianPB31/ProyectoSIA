@@ -57,16 +57,6 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="listaProducto">
-        <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
-        </property>
-        <property name="text">
-         <string>LISTA DE PRODUCTOS</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QPushButton" name="agregarEmpleado">
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -103,6 +93,16 @@
         </property>
         <property name="text">
          <string>EDITAR PROVEEDOR</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="listaProducto">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>INFORMACION DE PRODUCTOS</string>
         </property>
        </widget>
       </item>
@@ -231,7 +231,11 @@
          </widget>
         </item>
         <item row="5" column="0" colspan="4">
-         <widget class="QTextBrowser" name="log"/>
+         <widget class="QTextBrowser" name="log">
+          <property name="focusPolicy">
+           <enum>Qt::ClickFocus</enum>
+          </property>
+         </widget>
         </item>
         <item row="0" column="3">
          <widget class="QLineEdit" name="server_name">
@@ -313,17 +317,68 @@
         </sizepolicy>
        </property>
        <layout class="QGridLayout" name="gridLayout_3">
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="listarEmpleados">
+            <property name="text">
+             <string>Lista empleados</string>
+            </property>
+            <property name="autoDefault">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="asistenciaEmpleado">
+            <property name="text">
+             <string>Asistencia</string>
+            </property>
+            <property name="autoDefault">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="datoEmpleadoRut">
+            <property name="text">
+             <string>Dato de empleado</string>
+            </property>
+            <property name="autoDefault">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="rutEmpleadoDato"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="asistenciaEmpleadoRut">
+            <property name="text">
+             <string>Asistencia por empleado</string>
+            </property>
+            <property name="autoDefault">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="rutEmpleadoAsistencia"/>
+          </item>
+         </layout>
+        </item>
         <item row="0" column="0">
          <widget class="QTableView" name="tablaEmpleado">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
+          <property name="focusPolicy">
+           <enum>Qt::ClickFocus</enum>
           </property>
-          <attribute name="horizontalHeaderDefaultSectionSize">
-           <number>150</number>
-          </attribute>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="estatus">
+          <property name="text">
+           <string/>
+          </property>
          </widget>
         </item>
        </layout>
@@ -344,6 +399,9 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="focusPolicy">
+           <enum>Qt::ClickFocus</enum>
+          </property>
           <attribute name="horizontalHeaderDefaultSectionSize">
            <number>150</number>
           </attribute>
@@ -359,6 +417,16 @@
         </sizepolicy>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
+        <item row="6" column="2">
+         <widget class="QPushButton" name="agregarEmpleado_2">
+          <property name="text">
+           <string>Agregar</string>
+          </property>
+          <property name="autoDefault">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_3">
           <property name="text">
@@ -373,75 +441,178 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_2"/>
+        <item row="0" column="2">
+         <widget class="QLineEdit" name="rutEmpleado"/>
         </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_3"/>
+        <item row="1" column="2">
+         <widget class="QLineEdit" name="nombreEmpleado"/>
         </item>
-        <item row="2" column="1">
-         <widget class="QDateEdit" name="dateEdit"/>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Sueldo</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QLineEdit" name="sueldoEmpleado"/>
+        </item>
+        <item row="5" column="2">
+         <widget class="QLineEdit" name="direccionEmpleado"/>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLineEdit" name="apellidosEmpleado"/>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLineEdit" name="fonoEmpleado"/>
         </item>
         <item row="2" column="0">
+         <widget class="QLabel" name="label_49">
+          <property name="text">
+           <string>Apellidos</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
          <widget class="QLabel" name="label_4">
           <property name="text">
-           <string>Fecha Nacimiento</string>
+           <string>Direccion</string>
           </property>
          </widget>
         </item>
         <item row="3" column="0">
-         <widget class="QLabel" name="label_5">
+         <widget class="QLabel" name="label_55">
           <property name="text">
-           <string>sueldo</string>
+           <string>Fono</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="1">
-         <widget class="QLineEdit" name="lineEdit"/>
+        <item row="7" column="2">
+         <widget class="QLabel" name="estatus_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_4">
        <layout class="QGridLayout" name="gridLayout_5">
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_4"/>
+        <item row="6" column="2">
+         <widget class="QLineEdit" name="sueldoEmpleado_2"/>
         </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_8">
+        <item row="10" column="2">
+         <widget class="QLabel" name="estatus_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
-           <string>Nombre</string>
+           <string/>
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_5"/>
+        <item row="0" column="2">
+         <widget class="QComboBox" name="listaEmpleados_3">
+          <property name="editable">
+           <bool>true</bool>
+          </property>
+         </widget>
         </item>
-        <item row="0" column="0">
+        <item row="0" column="1">
          <widget class="QLabel" name="label_6">
           <property name="text">
            <string>RUT</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_7">
+        <item row="4" column="2">
+         <widget class="QLineEdit" name="apellidosEmpleado_2"/>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="buscarEmpleado">
           <property name="text">
-           <string>sueldo</string>
+           <string>Buscar</string>
+          </property>
+          <property name="autoDefault">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
-         <widget class="QDateEdit" name="dateEdit_2"/>
+        <item row="9" column="2">
+         <widget class="QPushButton" name="modificarEmpleado">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Modificar</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Direccion</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLabel" name="label_56">
+          <property name="text">
+           <string>Fono</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <widget class="QLineEdit" name="fonoEmpleado_2"/>
         </item>
         <item row="3" column="1">
-         <widget class="QLineEdit" name="lineEdit_6"/>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_9">
+         <widget class="QLabel" name="label_7">
           <property name="text">
-           <string>Fecha Nacimiento</string>
+           <string>Nombre</string>
           </property>
          </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLabel" name="label_57">
+          <property name="text">
+           <string>Apellidos</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="2">
+         <widget class="QLineEdit" name="direccionEmpleado_2"/>
+        </item>
+        <item row="6" column="1">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Sueldo</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLineEdit" name="nombreEmpleado_2"/>
+        </item>
+        <item row="8" column="1">
+         <widget class="QLabel" name="label_58">
+          <property name="text">
+           <string>Estado</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="2">
+         <widget class="QComboBox" name="estadoEmpleado"/>
         </item>
        </layout>
       </widget>
@@ -1074,48 +1245,59 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>codigoPistola_2</tabstop>
-  <tabstop>precioCaja</tabstop>
   <tabstop>cantidad_2</tabstop>
+  <tabstop>precioCaja</tabstop>
   <tabstop>fechaVenc</tabstop>
   <tabstop>agregarCaja</tabstop>
-  <tabstop>agregarNuevoProveedor</tabstop>
-  <tabstop>lineEdit_5</tabstop>
-  <tabstop>lineEdit</tabstop>
-  <tabstop>tablaEmpleado</tabstop>
-  <tabstop>lineEdit_6</tabstop>
-  <tabstop>codigoProd</tabstop>
-  <tabstop>nombreProd</tabstop>
-  <tabstop>tipoProd</tabstop>
-  <tabstop>lineEdit_11</tabstop>
-  <tabstop>lineEdit_9</tabstop>
+  <tabstop>password</tabstop>
+  <tabstop>listarEmpleados</tabstop>
+  <tabstop>asistenciaEmpleado</tabstop>
+  <tabstop>datoEmpleadoRut</tabstop>
+  <tabstop>rutEmpleadoDato</tabstop>
+  <tabstop>asistenciaEmpleadoRut</tabstop>
+  <tabstop>rutEmpleadoAsistencia</tabstop>
+  <tabstop>fonoEmpleado_2</tabstop>
   <tabstop>lineEdit_12</tabstop>
-  <tabstop>cantidad</tabstop>
-  <tabstop>dateEdit</tabstop>
+  <tabstop>buscarEmpleado</tabstop>
   <tabstop>lineEdit_16</tabstop>
   <tabstop>lineEdit_17</tabstop>
   <tabstop>lineEdit_18</tabstop>
   <tabstop>dateEdit_4</tabstop>
-  <tabstop>lineEdit_2</tabstop>
-  <tabstop>codigoPistola</tabstop>
-  <tabstop>password</tabstop>
-  <tabstop>log</tabstop>
-  <tabstop>server_name</tabstop>
   <tabstop>userID</tabstop>
+  <tabstop>modificarEmpleado</tabstop>
+  <tabstop>sueldoEmpleado_2</tabstop>
   <tabstop>driver</tabstop>
+  <tabstop>apellidosEmpleado_2</tabstop>
+  <tabstop>lineEdit_11</tabstop>
+  <tabstop>server_name</tabstop>
+  <tabstop>rutEmpleado</tabstop>
+  <tabstop>nombreEmpleado</tabstop>
+  <tabstop>apellidosEmpleado</tabstop>
+  <tabstop>fonoEmpleado</tabstop>
+  <tabstop>sueldoEmpleado</tabstop>
+  <tabstop>direccionEmpleado</tabstop>
+  <tabstop>agregarEmpleado_2</tabstop>
   <tabstop>DDBB</tabstop>
-  <tabstop>lineEdit_3</tabstop>
-  <tabstop>tablaProducto</tabstop>
-  <tabstop>lineEdit_4</tabstop>
-  <tabstop>dateEdit_2</tabstop>
-  <tabstop>precioProd</tabstop>
-  <tabstop>cantidadMinProd</tabstop>
-  <tabstop>agregarNuevoProducto</tabstop>
+  <tabstop>listaEmpleados_3</tabstop>
+  <tabstop>nombreEmpleado_2</tabstop>
+  <tabstop>lineEdit_9</tabstop>
+  <tabstop>direccionEmpleado_2</tabstop>
+  <tabstop>estadoEmpleado</tabstop>
   <tabstop>rutProv</tabstop>
+  <tabstop>nombreProv</tabstop>
   <tabstop>apellidoProv</tabstop>
   <tabstop>fonoProv</tabstop>
-  <tabstop>nombreProv</tabstop>
   <tabstop>nombreEmpProv</tabstop>
+  <tabstop>agregarNuevoProveedor</tabstop>
+  <tabstop>codigoProd</tabstop>
+  <tabstop>nombreProd</tabstop>
+  <tabstop>precioProd</tabstop>
+  <tabstop>tipoProd</tabstop>
+  <tabstop>cantidadMinProd</tabstop>
+  <tabstop>agregarNuevoProducto</tabstop>
+  <tabstop>codigoPistola</tabstop>
+  <tabstop>cantidad</tabstop>
+  <tabstop>codigoPistola_2</tabstop>
  </tabstops>
  <resources/>
  <connections>
@@ -1126,12 +1308,12 @@
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>554</x>
-     <y>249</y>
+     <x>285</x>
+     <y>68</y>
     </hint>
     <hint type="destinationlabel">
-     <x>557</x>
-     <y>353</y>
+     <x>285</x>
+     <y>71</y>
     </hint>
    </hints>
   </connection>
@@ -1142,12 +1324,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>485</x>
-     <y>161</y>
+     <x>285</x>
+     <y>65</y>
     </hint>
     <hint type="destinationlabel">
-     <x>502</x>
-     <y>257</y>
+     <x>285</x>
+     <y>68</y>
     </hint>
    </hints>
   </connection>
@@ -1158,12 +1340,12 @@
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>446</x>
-     <y>143</y>
+     <x>285</x>
+     <y>65</y>
     </hint>
     <hint type="destinationlabel">
-     <x>451</x>
-     <y>261</y>
+     <x>285</x>
+     <y>68</y>
     </hint>
    </hints>
   </connection>
@@ -1174,12 +1356,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>638</x>
-     <y>236</y>
+     <x>285</x>
+     <y>68</y>
     </hint>
     <hint type="destinationlabel">
-     <x>636</x>
-     <y>359</y>
+     <x>285</x>
+     <y>71</y>
     </hint>
    </hints>
   </connection>
@@ -1190,12 +1372,12 @@
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>785</x>
-     <y>359</y>
+     <x>285</x>
+     <y>71</y>
     </hint>
     <hint type="destinationlabel">
-     <x>761</x>
-     <y>548</y>
+     <x>285</x>
+     <y>76</y>
     </hint>
    </hints>
   </connection>
@@ -1206,12 +1388,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>824</x>
-     <y>348</y>
+     <x>285</x>
+     <y>71</y>
     </hint>
     <hint type="destinationlabel">
-     <x>825</x>
-     <y>541</y>
+     <x>285</x>
+     <y>76</y>
     </hint>
    </hints>
   </connection>
@@ -1222,12 +1404,12 @@
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>631</x>
-     <y>553</y>
+     <x>285</x>
+     <y>76</y>
     </hint>
     <hint type="destinationlabel">
-     <x>739</x>
-     <y>655</y>
+     <x>255</x>
+     <y>82</y>
     </hint>
    </hints>
   </connection>
@@ -1238,12 +1420,12 @@
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>374</x>
-     <y>150</y>
+     <x>232</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>374</x>
-     <y>92</y>
+     <x>232</x>
+     <y>64</y>
     </hint>
    </hints>
   </connection>
@@ -1254,12 +1436,12 @@
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>502</x>
-     <y>245</y>
+     <x>285</x>
+     <y>68</y>
     </hint>
     <hint type="destinationlabel">
-     <x>498</x>
-     <y>344</y>
+     <x>285</x>
+     <y>71</y>
     </hint>
    </hints>
   </connection>
@@ -1270,12 +1452,12 @@
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>615</x>
-     <y>348</y>
+     <x>285</x>
+     <y>71</y>
     </hint>
     <hint type="destinationlabel">
-     <x>596</x>
-     <y>449</y>
+     <x>285</x>
+     <y>73</y>
     </hint>
    </hints>
   </connection>
@@ -1286,12 +1468,12 @@
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>673</x>
-     <y>448</y>
+     <x>285</x>
+     <y>73</y>
     </hint>
     <hint type="destinationlabel">
-     <x>671</x>
-     <y>550</y>
+     <x>285</x>
+     <y>76</y>
     </hint>
    </hints>
   </connection>
@@ -1302,12 +1484,12 @@
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>756</x>
-     <y>549</y>
+     <x>285</x>
+     <y>76</y>
     </hint>
     <hint type="destinationlabel">
-     <x>755</x>
-     <y>644</y>
+     <x>280</x>
+     <y>82</y>
     </hint>
    </hints>
   </connection>
@@ -1318,12 +1500,12 @@
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>440</x>
-     <y>150</y>
+     <x>285</x>
+     <y>65</y>
     </hint>
     <hint type="destinationlabel">
-     <x>439</x>
-     <y>255</y>
+     <x>285</x>
+     <y>68</y>
     </hint>
    </hints>
   </connection>
@@ -1334,12 +1516,12 @@
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>685</x>
-     <y>85</y>
+     <x>246</x>
+     <y>65</y>
     </hint>
     <hint type="destinationlabel">
-     <x>444</x>
-     <y>177</y>
+     <x>220</x>
+     <y>73</y>
     </hint>
    </hints>
   </connection>
@@ -1350,12 +1532,12 @@
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>477</x>
-     <y>162</y>
+     <x>220</x>
+     <y>73</y>
     </hint>
     <hint type="destinationlabel">
-     <x>672</x>
-     <y>124</y>
+     <x>246</x>
+     <y>69</y>
     </hint>
    </hints>
   </connection>
@@ -1366,12 +1548,108 @@
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>807</x>
-     <y>135</y>
+     <x>246</x>
+     <y>69</y>
     </hint>
     <hint type="destinationlabel">
-     <x>971</x>
-     <y>136</y>
+     <x>272</x>
+     <y>69</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rutEmpleado</sender>
+   <signal>returnPressed()</signal>
+   <receiver>nombreEmpleado</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>333</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>271</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nombreEmpleado</sender>
+   <signal>returnPressed()</signal>
+   <receiver>apellidosEmpleado</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>302</x>
+     <y>198</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>304</x>
+     <y>263</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>apellidosEmpleado</sender>
+   <signal>returnPressed()</signal>
+   <receiver>fonoEmpleado</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>338</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>342</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fonoEmpleado</sender>
+   <signal>returnPressed()</signal>
+   <receiver>sueldoEmpleado</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>379</x>
+     <y>340</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>375</x>
+     <y>409</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sueldoEmpleado</sender>
+   <signal>returnPressed()</signal>
+   <receiver>direccionEmpleado</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>417</x>
+     <y>415</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>422</x>
+     <y>492</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>direccionEmpleado</sender>
+   <signal>returnPressed()</signal>
+   <receiver>agregarEmpleado_2</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>526</x>
+     <y>486</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>534</x>
+     <y>552</y>
     </hint>
    </hints>
   </connection>

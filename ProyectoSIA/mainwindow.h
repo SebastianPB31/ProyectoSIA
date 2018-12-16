@@ -58,6 +58,20 @@ class MainWindow : public QMainWindow {
 
   void on_emitirBoleta_2_clicked();
 
+  void on_asistenciaEmpleado_clicked();
+
+  void on_asistenciaEmpleadoRut_clicked();
+
+  void on_listarEmpleados_clicked();
+
+  void on_datoEmpleadoRut_clicked();
+
+  void on_agregarEmpleado_2_clicked();
+
+  void on_buscarEmpleado_clicked();
+
+  void on_modificarEmpleado_clicked();
+
 private:
   Ui::MainWindow *ui;
   QSqlDatabase db;
