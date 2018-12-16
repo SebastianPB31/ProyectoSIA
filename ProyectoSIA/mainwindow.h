@@ -72,6 +72,10 @@ class MainWindow : public QMainWindow {
 
   void on_modificarEmpleado_clicked();
 
+  void on_buscarProv_clicked();
+
+  void on_modificarProv_clicked();
+
 private:
   Ui::MainWindow *ui;
   QSqlDatabase db;

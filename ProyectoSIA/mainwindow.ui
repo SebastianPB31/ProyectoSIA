@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1281</width>
-    <height>706</height>
+    <width>857</width>
+    <height>586</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -219,7 +219,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>9</number>
+       <number>6</number>
       </property>
       <widget class="QWidget" name="page_0">
        <layout class="QGridLayout" name="gridLayout_11">
@@ -417,19 +417,6 @@
         </sizepolicy>
        </property>
        <layout class="QGridLayout" name="gridLayout_16">
-        <item row="5" column="2">
-         <widget class="QLabel" name="estatus_2">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
         <item row="2" column="2">
          <spacer name="horizontalSpacer_7">
           <property name="orientation">
@@ -445,6 +432,12 @@
         </item>
         <item row="2" column="1">
          <widget class="QPushButton" name="agregarEmpleado_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>Agregar Empleado</string>
           </property>
@@ -530,6 +523,19 @@
           </item>
          </layout>
         </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="estatus_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_4">
@@ -537,7 +543,7 @@
         <item row="1" column="1">
          <widget class="QPushButton" name="modificarEmpleado">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -709,14 +715,14 @@
       </widget>
       <widget class="QWidget" name="page_5">
        <layout class="QGridLayout" name="gridLayout_13">
-        <item row="1" column="0">
-         <spacer name="horizontalSpacer_4">
+        <item row="1" column="2">
+         <spacer name="horizontalSpacer_5">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>40</width>
+            <width>249</width>
             <height>20</height>
            </size>
           </property>
@@ -724,6 +730,12 @@
         </item>
         <item row="1" column="1">
          <widget class="QPushButton" name="agregarNuevoProveedor">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>Agregar Proveedor</string>
           </property>
@@ -732,14 +744,14 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="2">
-         <spacer name="horizontalSpacer_5">
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_4">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>40</width>
+            <width>249</width>
             <height>20</height>
            </size>
           </property>
@@ -749,6 +761,12 @@
          <layout class="QGridLayout" name="gridLayout_6">
           <item row="0" column="0">
            <widget class="QLabel" name="label_12">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>RUT</string>
             </property>
@@ -759,6 +777,12 @@
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_10">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Nombre</string>
             </property>
@@ -769,6 +793,12 @@
           </item>
           <item row="2" column="0">
            <widget class="QLabel" name="label_40">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Apellidos</string>
             </property>
@@ -779,6 +809,12 @@
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="label_11">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Telefono</string>
             </property>
@@ -789,6 +825,12 @@
           </item>
           <item row="4" column="0">
            <widget class="QLabel" name="label_41">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Empresa</string>
             </property>
@@ -798,6 +840,19 @@
            <widget class="QLineEdit" name="nombreEmpProv"/>
           </item>
          </layout>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="estatus_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -817,7 +872,13 @@
          </spacer>
         </item>
         <item row="1" column="1">
-         <widget class="QPushButton" name="agregarNuevoProveedor_2">
+         <widget class="QPushButton" name="modificarProv">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>Modificar Proveedor</string>
           </property>
@@ -843,16 +904,25 @@
          <layout class="QGridLayout" name="gridLayout_7">
           <item row="0" column="0">
            <widget class="QLabel" name="label_14">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>RUT</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
-           <widget class="QLineEdit" name="rutProv_2"/>
-          </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_15">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Nombre</string>
             </property>
@@ -863,6 +933,12 @@
           </item>
           <item row="2" column="0">
            <widget class="QLabel" name="label_60">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Apellidos</string>
             </property>
@@ -873,6 +949,12 @@
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="label_13">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Telefono</string>
             </property>
@@ -883,6 +965,12 @@
           </item>
           <item row="4" column="0">
            <widget class="QLabel" name="label_59">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Empresa</string>
             </property>
@@ -891,7 +979,63 @@
           <item row="4" column="1">
            <widget class="QLineEdit" name="nombreEmpProv_2"/>
           </item>
+          <item row="5" column="1">
+           <widget class="QComboBox" name="estadoProveedor">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_62">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Estado</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="listaProv">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="buscarProv">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Buscar</string>
+            </property>
+           </widget>
+          </item>
          </layout>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="estatus_5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -970,6 +1114,12 @@
         </item>
         <item row="1" column="1">
          <widget class="QPushButton" name="agregarNuevoProducto">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>Agregar Producto</string>
           </property>
@@ -1010,6 +1160,12 @@
         </item>
         <item row="1" column="1">
          <widget class="QPushButton" name="agregarNuevoProducto_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>Modificar Producto</string>
           </property>
@@ -1148,13 +1304,6 @@
           </property>
          </spacer>
         </item>
-        <item row="0" column="5">
-         <widget class="QLineEdit" name="codigoBorrar">
-          <property name="focusPolicy">
-           <enum>Qt::ClickFocus</enum>
-          </property>
-         </widget>
-        </item>
         <item row="6" column="5">
          <widget class="QComboBox" name="listaEmpleados">
           <property name="focusPolicy">
@@ -1227,6 +1376,13 @@
           </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="5">
+         <widget class="QLineEdit" name="codigoBorrar">
+          <property name="focusPolicy">
+           <enum>Qt::ClickFocus</enum>
           </property>
          </widget>
         </item>

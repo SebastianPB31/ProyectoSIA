@@ -7,9 +7,10 @@ void MainWindow::on_infoEmpleado_clicked() {
   ui->label->setText("INFORMACION DE EMPLEADOS");
   // desasociar modelo
   ui->tablaEmpleado->setModel(nullptr);
+  ui->estatus->clear();
 }
 
-void MainWindow::on_asistenciaEmpleado_clicked() {  // SQL query
+void MainWindow::on_asistenciaEmpleado_clicked() {
   model->setQuery(
       "SELECT "
       "E.RUT_EP,E.NOM_EP,E.APE_EP,E.SUELDO_EP,E.FONO_EP,E.DIRECC_EP,CAST "
@@ -123,6 +124,7 @@ void MainWindow::on_agregarEmpleado_clicked() {
   ui->sueldoEmpleado->clear();
   ui->fonoEmpleado->clear();
   ui->direccionEmpleado->clear();
+  ui->estatus_2->clear();
 }
 
 void MainWindow::on_agregarEmpleado_2_clicked() {
@@ -145,7 +147,7 @@ void MainWindow::on_agregarEmpleado_2_clicked() {
     ui->estatus_2->setText("ERROR, RUT existe");
     return;
   } else
-    ui->estatus->clear();
+    ui->estatus_2->clear();
   // SQL query
   query = "INSERT INTO EMPLEADO VALUES (%0, '%1', '%2', %3, '%4', '%5', 1)";
   model->setQuery(

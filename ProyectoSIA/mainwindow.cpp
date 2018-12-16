@@ -21,4 +21,3 @@ MainWindow::~MainWindow() {
 void MainWindow::on_salir_clicked() { QApplication::quit(); }
 
 
-
