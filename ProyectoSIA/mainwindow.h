@@ -76,6 +76,16 @@ class MainWindow : public QMainWindow {
 
   void on_modificarProv_clicked();
 
+  void on_codigoProd_2_returnPressed();
+
+  void on_agregarNuevoProducto_2_clicked();
+
+  void on_pushButton_clicked();
+
+  void on_buscarNumBoleta_clicked();
+
+  void on_buscarFechaBoleta_clicked();
+
 private:
   Ui::MainWindow *ui;
   QSqlDatabase db;

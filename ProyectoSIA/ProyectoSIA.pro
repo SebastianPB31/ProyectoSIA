@@ -32,7 +32,8 @@ SOURCES += \
     productos.cpp \
     proveedores.cpp \
     puntoventa.cpp \
-    puntocompra.cpp
+    puntocompra.cpp \
+    boletas.cpp
 
 HEADERS += \
         mainwindow.h

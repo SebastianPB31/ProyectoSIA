@@ -17,7 +17,7 @@ void MainWindow::on_realizarCompra_clicked() {
   ui->agregarCaja->setEnabled(false);
 
   // verif empleados
-  model->setQuery("SELECT RUT_EP FROM EMPLEADO");
+  model->setQuery("SELECT RUT_EP FROM EMPLEADO WHERE ESTADO = 1");
   int registros = model->rowCount();
   if (registros == 0) {
     ui->label_48->setText("ERROR NO HAY EMPLEADOS INGRESADOS");
@@ -31,7 +31,7 @@ void MainWindow::on_realizarCompra_clicked() {
   }
 
   // verif proveedor
-  model->setQuery("SELECT RUT_PV FROM PROVEEDOR");
+  model->setQuery("SELECT RUT_PV FROM PROVEEDOR WHERE ESTADO = 1");
   int registrosProv = model->rowCount();
   if (registrosProv == 0) {
     ui->label_48->setText("ERROR NO HAY PROVEEDORES INGRESADOS");
@@ -52,7 +52,7 @@ void MainWindow::on_realizarCompra_clicked() {
 
 void MainWindow::on_codigoPistola_2_returnPressed() {
   QString codigo = ui->codigoPistola_2->text();
-  QString query = "SELECT * FROM PRODUCTO WHERE COD_BR_PD = %0";
+  QString query = "SELECT * FROM PRODUCTO WHERE COD_BR_PD = %0 AND ESTADO = 1";
   model->setQuery(query.arg(codigo), db);
   QString verif = model->data(model->index(0, 0)).toString();
   if (verif == codigo) {
@@ -77,7 +77,7 @@ void MainWindow::on_agregarCaja_clicked() {
   if (codigo == "" || cantidad == "" || precio == "") return;
   int cantidadI = cantidad.toInt();
   // validación
-  QString query = "SELECT * FROM PRODUCTO WHERE COD_BR_PD = %0";
+  QString query = "SELECT * FROM PRODUCTO WHERE COD_BR_PD = %0 AND ESTADO = 1";
   model->setQuery(query.arg(codigo), db);
 
   QString verif = model->data(model->index(0, 0)).toString();

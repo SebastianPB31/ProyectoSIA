@@ -34,7 +34,7 @@ void MainWindow::on_codigoPistola_returnPressed() {
   if (codigo == "" || cantidad == "") return;
   int cantidadI = cantidad.toInt();
   // validación
-  QString query = "SELECT * FROM PRODUCTO WHERE COD_BR_PD = %0";
+  QString query = "SELECT * FROM PRODUCTO WHERE COD_BR_PD = %0 AND ESTADO = 1";
   model->setQuery(query.arg(codigo), db);
 
   QString verif = model->data(model->index(0, 0)).toString();

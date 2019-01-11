@@ -124,7 +124,7 @@ void MainWindow::on_agregarEmpleado_clicked() {
   ui->sueldoEmpleado->clear();
   ui->fonoEmpleado->clear();
   ui->direccionEmpleado->clear();
-  ui->estatus_2->clear();
+  ui->estatus->clear();
 }
 
 void MainWindow::on_agregarEmpleado_2_clicked() {
@@ -135,24 +135,29 @@ void MainWindow::on_agregarEmpleado_2_clicked() {
 
   if (rut == "" || nombre == "" || apellido == "" || sueldo == "" ||
       fono == "" || direccion == "") {
-    ui->estatus_2->setText("ERROR, algún dato fue dejado en blanco");
+    ui->estatus->setText("ERROR, algún dato fue dejado en blanco");
     return;
   } else {
-    ui->estatus_2->clear();
+    ui->estatus->clear();
   }
   // verificacion
   QString query = "SELECT RUT_EP FROM EMPLEADO WHERE RUT_EP = %0";
   model->setQuery(query.arg(ui->rutEmpleado->text()));
   if (model->rowCount() != 0) {
-    ui->estatus_2->setText("ERROR, RUT existe");
+    ui->estatus->setText("ERROR, RUT existe");
     return;
   } else
-    ui->estatus_2->clear();
+    ui->estatus->clear();
   // SQL query
   query = "INSERT INTO EMPLEADO VALUES (%0, '%1', '%2', %3, '%4', '%5', 1)";
   model->setQuery(
       query.arg(rut).arg(nombre).arg(apellido).arg(sueldo).arg(fono).arg(
           direccion));
+  // verificar cambios
+  if (model->lastError().isValid())
+    ui->estatus->setText("ERROR, usuario existe");
+  else
+    ui->estatus->setText("Usuario agregado");
 }
 
 void MainWindow::on_editarEmpleado_clicked() {
@@ -166,15 +171,16 @@ void MainWindow::on_editarEmpleado_clicked() {
   ui->sueldoEmpleado_2->clear();
   ui->fonoEmpleado_2->clear();
   ui->direccionEmpleado_2->clear();
+  ui->estatus->clear();
 
   // verif empleados
   model->setQuery("SELECT RUT_EP FROM EMPLEADO");
   int registros = model->rowCount();
   if (registros == 0) {
-    ui->estatus_3->setText("ERROR NO HAY EMPLEADOS INGRESADOS");
+    ui->estatus->setText("ERROR NO HAY EMPLEADOS INGRESADOS");
     return;
   } else {
-    ui->estatus_3->clear();
+    ui->estatus->clear();
   }
   // llenado de empleados
   for (int i = 0; i < registros; i++) {
@@ -203,6 +209,7 @@ void MainWindow::on_buscarEmpleado_clicked() {
 }
 
 void MainWindow::on_modificarEmpleado_clicked() {
+  ui->estatus->clear();
   // lectura datos
   QString rut = ui->listaEmpleados_3->currentText(),
           nombre = ui->nombreEmpleado_2->text(),
@@ -215,10 +222,10 @@ void MainWindow::on_modificarEmpleado_clicked() {
   // verificacion
   if (nombre == "" || apellido == "" || sueldo == "" || fono == "" ||
       direccion == "") {
-    ui->estatus_3->setText("ERROR, algún dato fue dejado en blanco");
+    ui->estatus->setText("ERROR, algún dato fue dejado en blanco");
     return;
   } else {
-    ui->estatus_3->clear();
+    ui->estatus->clear();
   }
   // actualizar datos
   QString query =
@@ -231,4 +238,11 @@ void MainWindow::on_modificarEmpleado_clicked() {
                       .arg(direccion)
                       .arg(estado)
                       .arg(rut));
+  // verificar cambios
+  query = "SELECT RUT_EP FROM EMPLEADO WHERE RUT_EP = %0";
+  model->setQuery(query.arg(rut));
+  if (model->rowCount() == 0)
+    ui->estatus->setText("ERROR, usuario no existe");
+  else
+    ui->estatus->setText("Usuario modificado");
 }

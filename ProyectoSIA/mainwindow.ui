@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>857</width>
-    <height>586</height>
+    <width>1041</width>
+    <height>673</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -189,6 +189,16 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>BOLETAS</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="salir">
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -219,7 +229,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>6</number>
+       <number>8</number>
       </property>
       <widget class="QWidget" name="page_0">
        <layout class="QGridLayout" name="gridLayout_11">
@@ -255,13 +265,6 @@
          <widget class="QLineEdit" name="userID">
           <property name="text">
            <string>SA</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_31">
-          <property name="text">
-           <string>Driver</string>
           </property>
          </widget>
         </item>
@@ -304,6 +307,13 @@
          <widget class="QLineEdit" name="DDBB">
           <property name="text">
            <string>SANTA_ISABEL</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_31">
+          <property name="text">
+           <string>Driver</string>
           </property>
          </widget>
         </item>
@@ -371,13 +381,6 @@
          <widget class="QTableView" name="tablaEmpleado">
           <property name="focusPolicy">
            <enum>Qt::ClickFocus</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="estatus">
-          <property name="text">
-           <string/>
           </property>
          </widget>
         </item>
@@ -523,19 +526,6 @@
           </item>
          </layout>
         </item>
-        <item row="3" column="1">
-         <widget class="QLabel" name="estatus_2">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_4">
@@ -550,19 +540,6 @@
           </property>
           <property name="text">
            <string>Modificar Empleado</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QLabel" name="estatus_3">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string/>
           </property>
          </widget>
         </item>
@@ -841,19 +818,6 @@
           </item>
          </layout>
         </item>
-        <item row="2" column="1">
-         <widget class="QLabel" name="estatus_4">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_6">
@@ -1024,19 +988,6 @@
           </item>
          </layout>
         </item>
-        <item row="2" column="1">
-         <widget class="QLabel" name="estatus_5">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_7">
@@ -1189,6 +1140,13 @@
         </item>
         <item row="0" column="0" colspan="3">
          <layout class="QGridLayout" name="gridLayout_9">
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_61">
+            <property name="text">
+             <string>Tipo de producto</string>
+            </property>
+           </widget>
+          </item>
           <item row="1" column="1">
            <widget class="QLineEdit" name="nombreProd_2"/>
           </item>
@@ -1212,13 +1170,6 @@
           <item row="2" column="1">
            <widget class="QLineEdit" name="precioProd_2"/>
           </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="label_61">
-            <property name="text">
-             <string>Tipo de producto</string>
-            </property>
-           </widget>
-          </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_22">
             <property name="text">
@@ -1240,6 +1191,23 @@
            <widget class="QComboBox" name="tipoProd_2">
             <property name="focusPolicy">
              <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_63">
+            <property name="text">
+             <string>Estado</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QComboBox" name="estadoProducto">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
            </widget>
           </item>
@@ -1590,6 +1558,112 @@
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="page_11">
+       <layout class="QGridLayout" name="gridLayout_18">
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_67">
+          <property name="text">
+           <string>Total Boleta</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_65">
+          <property name="text">
+           <string>Fecha Boleta</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QPushButton" name="buscarNumBoleta">
+          <property name="text">
+           <string>Búsqueda por boleta</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_64">
+          <property name="text">
+           <string>RUT Vendedor</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QPushButton" name="buscarFechaBoleta">
+          <property name="text">
+           <string>Búsqueda fechas</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="1">
+         <widget class="QLabel" name="estatus_8">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="rutEmpleadoBoleta">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_66">
+          <property name="text">
+           <string>Hora Boleta</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="fechaBoleta">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="horaboleta">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLabel" name="totalboleta">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="6">
+         <widget class="QTableView" name="tablaBoleta"/>
+        </item>
+        <item row="8" column="4" colspan="2">
+         <widget class="QDateEdit" name="fechaTermino"/>
+        </item>
+        <item row="8" column="1" colspan="2">
+         <widget class="QDateEdit" name="fechaInicio"/>
+        </item>
+        <item row="7" column="1" colspan="5">
+         <widget class="QLineEdit" name="numBoleta"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="estatus">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </item>
    </layout>
