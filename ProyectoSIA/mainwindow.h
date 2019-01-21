@@ -5,6 +5,10 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QPainter>
+#include <QClipboard>
 
 namespace Ui {
 class MainWindow;
@@ -14,7 +18,7 @@ class MainWindow : public QMainWindow {
   Q_OBJECT
 
  public:
-  explicit MainWindow(QWidget *parent = 0);
+  explicit MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
 
  private slots:
@@ -85,6 +89,12 @@ class MainWindow : public QMainWindow {
   void on_buscarNumBoleta_clicked();
 
   void on_buscarFechaBoleta_clicked();
+
+  void on_tablaProducto_doubleClicked(const QModelIndex &index);
+
+  void on_tablaEmpleado_doubleClicked(const QModelIndex &index);
+
+  void on_tablaBoleta_doubleClicked(const QModelIndex &index);
 
 private:
   Ui::MainWindow *ui;

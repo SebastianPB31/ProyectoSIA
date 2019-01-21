@@ -10,10 +10,12 @@ void MainWindow::on_listaProducto_clicked() {
   model->setQuery(
       "SELECT "
       "PRODUCTO.NOM_PD,PRODUCTO.COD_BR_PD,PRODUCTO.PRECIO_PD,CLASIFICACION.NOM_"
-      "CF,PRODUCTO.CANT_CRIT_PD,ISNULL (STOCK.CANTIDAD_RP,0) FROM PRODUCTO "
-      "LEFT JOIN CLASIFICACION "
-      "ON PRODUCTO.ID_CF=CLASIFICACION.ID_CF LEFT JOIN STOCK ON "
-      "PRODUCTO.COD_BR_PD=STOCK.COD_BR_PD WHERE PRODUCTO.ESTADO=1",
+      "CF,PRODUCTO.CANT_CRIT_PD,ISNULL (STOCK.CANTIDAD_RP,0), ISNULL((SELECT "
+      "CONVERT(VARCHAR, REG_PROVISION.FECHA_VENCI_RP,105)),'SIN FECHA') FROM "
+      "PRODUCTO LEFT JOIN CLASIFICACION ON PRODUCTO.ID_CF=CLASIFICACION.ID_CF "
+      "LEFT JOIN STOCK ON PRODUCTO.COD_BR_PD=STOCK.COD_BR_PD LEFT JOIN "
+      "REG_PROVISION ON PRODUCTO.COD_BR_PD = REG_PROVISION.COD_BR_PD WHERE "
+      "PRODUCTO.ESTADO=1",
       db);
   model->setHeaderData(0, Qt::Horizontal, QObject::tr("Nombre producto"));
   model->setHeaderData(1, Qt::Horizontal, QObject::tr("codigo"));
@@ -21,10 +23,17 @@ void MainWindow::on_listaProducto_clicked() {
   model->setHeaderData(3, Qt::Horizontal, QObject::tr("Tipo producto"));
   model->setHeaderData(4, Qt::Horizontal, QObject::tr("Stock critico"));
   model->setHeaderData(5, Qt::Horizontal, QObject::tr("Stock actual"));
+  model->setHeaderData(6, Qt::Horizontal,
+                       QObject::tr("Fecha vencimiento ultimo lote"));
 
   // imprimir a pantalla
   ui->tablaProducto->setModel(model);
   ui->tablaProducto->show();
+}
+
+void MainWindow::on_tablaProducto_doubleClicked(const QModelIndex &index) {
+  QClipboard *clipboard = QGuiApplication::clipboard();
+  clipboard->setText(model->data(index).toString());
 }
 
 void MainWindow::on_agregarProducto_clicked() {

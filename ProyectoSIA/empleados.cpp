@@ -246,3 +246,8 @@ void MainWindow::on_modificarEmpleado_clicked() {
   else
     ui->estatus->setText("Usuario modificado");
 }
+
+void MainWindow::on_tablaEmpleado_doubleClicked(const QModelIndex &index) {
+  QClipboard *clipboard = QGuiApplication::clipboard();
+  clipboard->setText(model->data(index).toString());
+}

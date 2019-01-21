@@ -67,7 +67,7 @@ void MainWindow::on_buscarNumBoleta_clicked() {
   // calcular total
   unsigned total = 0;
   for (int i = 0; i < model->rowCount(); i++) {
-    total += model->data(model->index(i, 4)).toInt();
+    total += model->data(model->index(i, 4)).toUInt();
   }
 
   ui->totalboleta->setText(QString::number(total));
@@ -104,4 +104,9 @@ void MainWindow::on_buscarFechaBoleta_clicked() {
   // imprimir a pantalla
   ui->tablaBoleta->setModel(model);
   ui->tablaBoleta->show();
+}
+
+void MainWindow::on_tablaBoleta_doubleClicked(const QModelIndex &index) {
+  QClipboard *clipboard = QGuiApplication::clipboard();
+  clipboard->setText(model->data(index).toString());
 }

@@ -90,6 +90,21 @@ void MainWindow::on_emitirBoleta_clicked() {
                         .arg(std::get<2>(elemento)));
   }
 
+  // generar impresion
+  QPrinter impresora;
+  QPrintDialog *ventanaImpresion = new QPrintDialog(&impresora);
+  ventanaImpresion->setWindowTitle("Imprimir boleta");
+  if (ventanaImpresion->exec() == QDialog::Accepted) {
+    QPainter painter;
+    painter.begin(&impresora);
+    QString texto = "Botillería Santa Isabel\n" +
+                    QDate::currentDate().toString(Qt::ISODate) + "\n\n" +
+                    ui->detalleBoleta->toPlainText();
+    painter.setFont(QFont("hack",8));
+    painter.drawText(100, 100, 500, 500, Qt::AlignLeft | Qt::AlignTop, texto);
+    painter.end();
+  }
+  // limpiar
   ui->detalleBoleta->clear();
   ui->totalBoleta->display(0);
   listaVenta.clear();
